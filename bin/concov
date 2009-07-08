@@ -1,0 +1,18 @@
+#!/home/chkbuild/local/bin/ruby
+#
+# concov - continuous coverage manager
+#
+#   * bin/concov: concov command-line interface
+#
+
+$:.unshift(File.dirname(File.dirname(__FILE__)))
+
+require "lib/command"
+require "lib/command/init"
+require "lib/command/info"
+require "lib/command/register"
+require "lib/command/view"
+
+exit 1 unless Concov::Command.main(*ARGV)
+
+# vim: syntax=ruby

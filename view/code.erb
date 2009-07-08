@@ -1,0 +1,35 @@
+<% colspan, dates, klass = case @view %>
+<% when Concov::DayView  then [3, [@desc_date              ], "day" ] %>
+<% when Concov::DiffView then [5, [@desc_date1, @desc_date2], "diff"] %>
+<% end %>
+<table class="code <%= klass %>">
+  <tr>
+    <th>lineno</th>
+<% dates.each do |date| %>
+    <th colspan="2"><%= date %></th>
+<% end %>
+  </tr>
+<% @hunks.each do |output, arg| %>
+<%   if output %>
+<%     arg.each do |lineno, *lines| %>
+  <tr>
+    <td class="lineno"><%= lineno %></td>
+<%       lines.each_slice(2) do |count, line| %>
+    <%= code_markup(count, line) %>
+<%       end %>
+  </tr>
+<%     end %>
+<%   else %>
+<%       id, size = *arg %>
+  <tr class="snip-start"><td colspan="<%= colspan %>"></td></tr>
+  <tr class="snip">
+    <td colspan="<%= colspan %>" class="snip">
+      <span id="<%= id %>" class="snip">
+        (snip <%= size %> lines; click to expand here)
+      </span>
+    </td>
+  </tr>
+  <tr class="snip-end"><td colspan="<%= colspan %>"></td></tr>
+<%   end %>
+<% end %>
+</table>

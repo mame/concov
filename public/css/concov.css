@@ -1,0 +1,396 @@
+/**********************/
+/*** page structure ***/
+/**********************/
+
+body {
+    margin: 2em;
+    background: #ffffff;
+}
+div {
+    margin: 0em;
+}
+div#header {
+}
+div#content {
+    clear: both;
+}
+div#footer {
+    clear: both;
+}
+
+
+/*************/
+/*** guide ***/
+/*************/
+
+table.guide {
+    margin: 1em 0em;
+    border: 1px solid #999999;
+    clear: left;
+    float: left;
+}
+table.guide th, table.guide td {
+    padding: 0.1em 1em;
+    border: 1px solid #999999;
+    white-space: nowrap;
+}
+table.guide td.date {
+    text-align: right;
+}
+table.guide td span.side {
+    float: left;
+}
+
+
+/*****************/
+/*** view tabs ***/
+/*****************/
+
+ul.view-tabs {
+    text-align: right;
+    float: left;
+    margin: 0em;
+    padding: 1px 0em 0em 0em;
+    list-style-type: none;
+}
+ul.view-tabs li {
+    margin: 0em;
+    padding: 0em 0.5em 0em 0em;
+    display: inline;
+}
+ul.view-tabs li a {
+    border: 1px solid #999999;
+    padding: 0em 0.5em;
+    color: #3366ff;
+    background: #ffffff;
+    text-decoration: none;
+}
+ul.view-tabs li a:hover {
+    background: #6666ff;
+    color: #ffffff;
+}
+ul.view-tabs li span {
+    border: 1px solid #999999;
+    padding: 0em 0.5em;
+}
+ul.view-tabs li span.selected {
+    color: #ffffff;
+    background: #6666ff;
+}
+ul.view-tabs li span.disabled {
+    color: #999999;
+    background: #ffffff;
+}
+
+
+/**************/
+/*** common ***/
+/**************/
+
+table, td, th {
+    margin: 0em;
+    padding: 0em;
+    border-collapse: collapse;
+    cell-spacing: 0;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/*** coverage level ***/
+td.lev0 { background: #999999; }
+td.lev1 { background: #cc9999; }
+td.lev2 { background: #ff9999; }
+td.lev3 { background: #ffcc99; }
+td.lev4 { background: #ffff99; }
+td.lev5 { background: #ccff99; }
+td.lev6 { background: #99ff99; }
+td.lev7 { background: #99ff99; color: #009900; }
+
+td.not-available {
+    background: #ffffff;
+    color: #999999;
+}
+
+/*************/
+/*** views ***/
+/*************/
+
+/*** list view ***/
+table.list {
+    width: 100%;
+    border: 1px solid #999999;
+    position: relative;
+    clear: both;
+}
+table.list th {
+    border: 1px solid #0000ff;
+    font-size: 1em;
+    color: #ffffff;
+    background: #6666ff;
+    white-space: nowrap;
+}
+table.list th.day {
+    font-size: 0.8em;
+}
+table.list th.cmp {
+    width: 1em;
+    padding: 0em;
+}
+table.list td {
+    padding: 0.1em 1em;
+    border: 1px solid #999999;
+    white-space: nowrap;
+    text-align: right;
+}
+table.list td.name {
+    text-align: left;
+    white-space: normal;
+}
+table.list span.link {
+    font-size: smaller;
+    float: right;
+}
+table.list td.cmp {
+    width: 1em;
+    padding: 0em;
+    text-align: center;
+}
+table.list td.cmp a {
+    text-decoration: none;
+    display: block;
+}
+table.list td.empty-line {
+    height: 3px;
+}
+table.list td.notice {
+    text-align: center;
+    font-weight: bold;
+}
+
+/*** code view ***/
+table.code {
+    width: 100%;
+    position: relative;
+    clear: both;
+}
+table.code th {
+    border: 1px solid #0000ff;
+    font-size: 1em;
+    color: #ffffff;
+    background: #6666ff;
+    white-space: nowrap;
+}
+table.code tr.hide {
+    display: none;
+}
+table.code td {
+    padding: 0em 0.5em;
+    border: 1px solid #ffffff;
+    background: #ccccff;
+    font-size: smaller;
+    vertical-align: top;
+}
+table.code td.lineno {
+    text-align: right;
+    color: #666666;
+    background: #ccccff;
+    white-space: nowrap;
+}
+table.code td.snip-lineno {
+    text-align: right;
+    color: #666666;
+    background: #ffffff;
+    white-space: nowrap;
+}
+table.code td.count {
+    text-align: right;
+    background: #ccccff;
+    white-space: nowrap;
+}
+table.code.day td.code {
+    width: 100%;
+}
+table.code.diff td.code {
+    width: 50%;
+}
+table.code td.code {
+    font-family: monospace;
+    border: 0px solid #ffffff;
+    background: #ccccff;
+}
+table.code td.snip {
+    padding: 1.5em 0em;
+    text-align: center;
+    background: #ffffff;
+}
+table.code span.snip {
+    border: 3px ridge #ccffff;
+    padding: 2px 1em;
+    background: #ccccff;
+}
+table.code tr.snip-start td {
+    height: 5px;
+    border-bottom: 5px inset #6666ff;
+}
+table.code tr.snip-end td {
+    height: 5px;
+    border-top: 5px outset #6666ff;
+}
+table.code td.blank {
+    color: #333333;
+    background: #ffffff;
+}
+table.code td.deleted {
+    color: #000000;
+    background: #999999;
+}
+table.code td.covered {
+    color: #003300;
+    background: #ccffcc;
+}
+table.code td.uncovered {
+    color: #660000;
+    background: #ffcccc
+}
+
+/*** changes view ***/
+table.changes {
+    width: 100%;
+    position: relative;
+    clear: both;
+}
+table.changes td {
+    text-align: right;
+    padding: 0.1em 1em;
+    border: 1px solid #999999;
+    white-space: nowrap;
+}
+table.changes th {
+    font-size: 1em;
+    border: 1px solid #0000ff;
+    color: #ffffff;
+    background: #6666ff;
+}
+table.changes td.entry {
+    text-align: center;
+}
+table.changes td.entry a {
+    text-decoration: none;
+}
+table.changes td.diff {
+    text-align: center;
+}
+table.changes td.navi {
+    text-align: center;
+}
+table.changes span.link {
+    font-size: smaller;
+    float: right;
+}
+table.changes td.notice {
+    text-align: center;
+    font-weight: bold;
+}
+dl.legend {
+    border: 1px solid #999999;
+    padding: 1em;
+}
+dl.legend dt {
+    width: 6em;
+    clear: both;
+    float: left;
+    margin: 0em 1.5em 0em 0em;
+    padding: 0.5em 1.5em 0.5em 0em;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    text-align: right;
+}
+dl.legend dd {
+    margin: 0em;
+    padding: 0.5em 0em 0.5em 1.5em;
+    border-bottom: 1px solid #999999;
+}
+
+/*** chart view ***/
+div.chart {
+    border: 1px solid #999999;
+    position: relative;
+    clear: both;
+}
+img.chart {
+    padding: 1em;
+    border: 1px solid #999999;
+}
+p.chart {
+    margin: 1em auto;
+    text-align: center;
+}
+
+
+/*********************/
+/*** miscellaneous ***/
+/*********************/
+
+a {
+    text-decoration: underline;
+    color: #0000ff;
+}
+a:visited {
+    color: #cc0066;
+}
+a:hover {
+    background: #6666ff;
+    color: #ffffff;
+}
+a:visited:hover {
+    background: #ff6699;
+    color: #ffffff;
+}
+p.note {
+    text-align: center;
+}
+p.generator, p.acknowledge, p.elapsed {
+    text-align: right;
+    margin: 0em;
+}
+a:hover img.icon {
+    background: #6666ff;
+}
+img.icon {
+    border: 0px solid #000000;
+    margin: 0px 2px 0px 2px;
+    vertical-align: middle;
+}
+img.logo {
+    width: 256px;
+    height: 57px;
+    border: 0px solid #000000;
+    float: left;
+}
+img.quick-chart {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    padding: 1px;
+    border: 1px solid #999999;
+}
+div.bar-wrap-wrap {
+    float: right;
+    margin: 0.5em 0em auto 1em;
+}
+div.bar-wrap {
+    width: 78px;
+    height: 9px;
+    padding: 0em;
+    overflow: hidden;
+    margin: 0em 0em 0em auto;
+}
+img.bar {
+    width: 80px;
+    height: 10px;
+    vertical-align: top;
+    margin: 0em;
+    padding: 0em;
+    position: relative;
+    left: -2px;
+}

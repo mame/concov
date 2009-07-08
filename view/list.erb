@@ -1,0 +1,51 @@
+<table class="list">
+<% case @view %>
+<% when Concov::DayView %>
+  <tr><th rowspan="2">file</th><th colspan="2"><%= @desc_date %></th></tr>
+  <tr><th>coverage</th><th>lines</th></tr>
+<% when Concov::WeekView %>
+  <tr><th rowspan="2">file</th><th colspan="13"><%= @desc_date %></th></tr>
+<%   dates = @view.map {|date| %(<th class="day">#{ date.to_show }</th>) } %>
+  <tr><%= dates.join(%(<th class="cmp"></th>)) %></tr>
+<% when Concov::DiffView %>
+  <tr>
+    <th rowspan="2">file</th>
+    <th colspan="2"><%= @desc_date1 %></th>
+    <th rowspan="2" class="cmp"></th>
+    <th colspan="2"><%= @desc_date2 %></th>
+  </tr>
+  <tr><th>coverage</th><th>lines</th><th>coverage</th><th>lines</th></tr>
+<% end %>
+<% view = @view.is_a?(Concov::WeekView) ? @view.to_day_view : @view %>
+<% diff_view    = @view.to_diff_view %>
+<% changes_view = @view.to_changes_view %>
+<% chart_view   = @view.to_chart_view %>
+<% colspan = @view.to_a.size * (@view.is_a?(Concov::WeekView) ? 2 : 3) %>
+  <tr><td class="empty-line" colspan="<%= colspan %>"></td></tr>
+<% if @columns.size == 1 %>
+  <tr><td class="notice" colspan="<%= colspan %>">no data available</td></tr>
+<% end %>
+<% @columns.each do |(name, path), entries| %>
+<%   unless path %>
+  <tr><td class="empty-line" colspan="<%= colspan %>"></td></tr>
+<%   end %>
+  <tr>
+    <td class="name">
+<%   if path %>
+      <span class="link">
+        <%= link(view_icon(:diff)   , path: path, view: diff_view) %>
+        <%= link(view_icon(:changes), path: path, view: changes_view) %>
+        <%= link(view_icon(:chart)  , path: path, view: chart_view) %>
+      </span>
+<%   end %>
+      <%= path ? link(name, path: path, view: view) : "(total)" %>
+    </td>
+<%   entries.zip(@cmp_views) do |(cov, cmp_mark), cmp_view| %>
+    <%= coverage_markup(cov, !@view.is_a?(Concov::WeekView)) %>
+<%     if cmp_mark %>
+    <td class="cmp"><%= link(cmp_mark, path: path, view: cmp_view) %></td>
+<%     end %>
+<%   end %>
+  </tr>
+<% end %>
+</table>

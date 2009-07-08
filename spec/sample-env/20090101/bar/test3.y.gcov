@@ -1,0 +1,7 @@
+     -:0:Source:test3.y
+     1:1:foo
+    10:2:bar
+ #####:3:baz
+     -:4:qux
+   100:5:corge
+ #####:6:grault

@@ -1,0 +1,7 @@
+     1:1:5.times do
+     5:2:  p :foo
+     -:3:end
+     1:4:if false
+ #####:5:  p :bar
+     -:6:end
+     1:7:p :end

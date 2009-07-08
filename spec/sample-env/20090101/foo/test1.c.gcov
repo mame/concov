@@ -1,0 +1,4 @@
+     -:0:Source:test1.c
+     1:1:int main() {
+     1:2:	foo();
+     -:3:}
