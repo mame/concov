@@ -52,6 +52,7 @@ ul.view-tabs {
     margin: 0em;
     padding: 1px 0em 0em 0em;
     list-style-type: none;
+    white-space: nowrap;
 }
 ul.view-tabs li {
     margin: 0em;
@@ -60,7 +61,7 @@ ul.view-tabs li {
 }
 ul.view-tabs li a {
     border: 1px solid #999999;
-    padding: 0em 0.5em;
+    padding: 0.2em 0.5em;
     color: #3366ff;
     background: #ffffff;
     text-decoration: none;
@@ -71,7 +72,7 @@ ul.view-tabs li a:hover {
 }
 ul.view-tabs li span {
     border: 1px solid #999999;
-    padding: 0em 0.5em;
+    padding: 0.2em 0.5em;
 }
 ul.view-tabs li span.selected {
     color: #ffffff;
