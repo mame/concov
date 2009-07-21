@@ -16,10 +16,10 @@ demo: http://dame.dyndns.org:7001/
 
 == REQUIREMENTS:
 
-* ruby 1.9
+* ruby 1.9.1p129 or later
 * ramaze / innate (> 2009.06.12)
 * sequel (3.1.0)
-* sqlite3-ruby
+* amalgalite
 
 * thin (optional)
 
