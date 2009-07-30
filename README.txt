@@ -17,9 +17,10 @@ demo: http://dame.dyndns.org:7001/
 == REQUIREMENTS:
 
 * ruby 1.9.1p129 or later
-* ramaze / innate (> 2009.06.12)
-* sequel (3.1.0)
-* amalgalite
+* ramaze / innate (>= 2009.07)
+* sequel (>= 3.1.0)
+* amalgalite (>= 0.10.0)
+* git (>= 1.6.0.2)
 
 * thin (optional)
 
@@ -60,6 +61,13 @@ demo: http://dame.dyndns.org:7001/
   $ thin start
 
 * view http://server:7000/ by your browser
+
+* if you can read Japanese, see also the following entry for details:
+  http://d.hatena.ne.jp/ku-ma-me/20090729/p1
+
+* run tests if you want
+
+  $ ruby19 spec/runner.rb
 
 == LICENSE:
 
