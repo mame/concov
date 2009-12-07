@@ -1,3 +1,4 @@
+<%# coding: ASCII-8BIT %>
 <% colspan, dates, klass = case @view %>
 <% when Concov::DayView  then [3, [@desc_date              ], "day" ] %>
 <% when Concov::DiffView then [5, [@desc_date1, @desc_date2], "diff"] %>

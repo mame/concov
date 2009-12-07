@@ -1,3 +1,4 @@
+<%# coding: ASCII-8BIT %>
 <% if @error %>
 <h1>concov error: <%=h @error %></h1>
 <% else %>
@@ -38,7 +39,7 @@
 <%     if @path_type != :file %>
 <%= render_view(:list).gsub(/^/, "  ") %>
 <%     else %>
-<%= render_view(:code).force_encoding("ASCII-8BIT").gsub(/^/, "  ") %>
+<%= render_view(:code).gsub(/^/, "  ") %>
 <%     end %>
 <%   when Concov::ChangesView %>
 <%= render_view(:changes).gsub(/^/, "  ") %>
