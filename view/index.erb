@@ -38,7 +38,7 @@
 <%     if @path_type != :file %>
 <%= render_view(:list).gsub(/^/, "  ") %>
 <%     else %>
-<%= render_view(:code).gsub(/^/, "  ") %>
+<%= render_view(:code).force_encoding("ASCII-8BIT").gsub(/^/, "  ") %>
 <%     end %>
 <%   when Concov::ChangesView %>
 <%= render_view(:changes).gsub(/^/, "  ") %>

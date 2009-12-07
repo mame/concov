@@ -16,6 +16,6 @@
     <script type="text/javascript" src="/js/concov.js"></script>
   </head>
   <body>
-<%= @content.gsub(/^/, "    ") %>
+<%= @content.force_encoding("ASCII-8BIT").gsub(/^/, "    ") %>
   </body>
 </html>
